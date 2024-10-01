@@ -1,7 +1,7 @@
 ---
 publishDate: 2024-04-20T00:00:00Z
-title: Głęboka ekologia w codziennym życiu: Filozofia Raypath w praktyce domowej
-excerpt: Odkryj, jak filozofia Raypath może wpłynąć na Twoje codzienne wybory, promując głęboką ekologię i zrównoważony styl życia w Twoim domu.
+title: "Głęboka ekologia w codziennym życiu: Filozofia Raypath w praktyce domowej"
+excerpt: "Odkryj, jak filozofia Raypath może wpłynąć na Twoje codzienne wybory, promując głęboką ekologię i zrównoważony styl życia w Twoim domu."
 image: https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80
 category: Sustainable Living
 tags:
@@ -9,7 +9,7 @@ tags:
   - Raypath
   - zrównoważony styl życia
 metadata:
-  canonical: https://raypath.eco/filozofia-raypath-w-praktyce
+  canonical: https://raypath.eco/blog/gleboka-ekologia-w-codziennym-zyciu-filozofia-raypath-w-praktyce-domowej
 ---
 
 # Głęboka ekologia w codziennym życiu: Filozofia Raypath w praktyce domowej
