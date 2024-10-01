@@ -53,10 +53,12 @@ export const getPermalink = (slug = '', type = 'page'): string => {
   }
 
   switch (type) {
-    case 'home':
-      permalink = getHomePermalink();
-      break;
+    // case 'home':
+    //   permalink = getHomePermalink();
+    //   break;
 
+
+    case 'home':
     case 'blog':
       permalink = getBlogPermalink();
       break;
