@@ -1,6 +1,6 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: 'Twoj ekologiczny dom'
+  site: 'https://twojekologicznydom.pl'
   base: '/'
   trailingSlash: false
 
@@ -9,9 +9,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Twoj ekologiczny dom
+    template: '%s — Twoj ekologiczny dom'
+  description: "🏡 Odkryj jak zbudować i żyć w ekologicznym domu. Porady, inspiracje i rozwiązania dla zrównoważonego budownictwa i zdrowego stylu życia."
   robots:
     index: true
     follow: true
@@ -66,7 +66,7 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: "G-BLP4EJW384"
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
