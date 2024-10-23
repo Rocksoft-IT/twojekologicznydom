@@ -1,0 +1,14 @@
+---
+import Image from '~/components/common/Image.astro';
+---
+<Image
+  src="/img/hero-image.png"
+  class="w-full"
+  widths={[400, 900]}
+  width={400}
+  sizes="(max-width: 900px) 400px, 900px"
+  alt=""
+  aspectRatio="16:9"
+  loading="lazy"
+  decoding="async"
+/>

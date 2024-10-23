@@ -1,0 +1,20 @@
+---
+import WidgetWrapper from '../../ui/WidgetWrapper.astro';
+import Calculator from '~/components/widgets/rocksoft/partials/Calculator.astro';
+
+
+const {
+    test = 88
+} = Astro.props;
+
+---
+
+
+<section class="flex items-center py-20 bg-rs-light-green">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="font-bold md:text-6xl text-2xl text-black text-center mb-10">Kluczowe zalety korzystania z produktów <span>Raypath</span></h2>
+
+        <Calculator />
+
+    </div>
+</section>
