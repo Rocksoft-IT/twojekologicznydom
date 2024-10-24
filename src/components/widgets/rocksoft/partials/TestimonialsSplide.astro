@@ -1,0 +1,79 @@
+---
+import Image from '~/components/common/Image.astro';
+
+//TODO connect with real testimonials
+const slides = [
+    {
+        alt: 'Our company',
+        stars: 4,
+        desc: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.”',
+        name: 'John Doe',
+        role: 'CEO',
+        img: '/img/calculator-option-1.png',
+        active: false
+    },
+    {
+        alt: 'Our company',
+        stars: 1,
+        desc: 'Some desc',
+        name: 'John Doe',
+        role: 'CEO',
+        img: '/img/calculator-option-1.png',
+        active: false
+    },
+];
+
+---
+
+
+
+<div>
+    <section class="splide" aria-label="Splide Basic HTML Example">
+        <div class="splide__track">
+              <ul class="splide__list">
+                {slides.map((slide) => 
+                (
+                <li class="splide__slide">
+                    <div class="flex items-center">
+                        <div class="bg-rs-light-gray w-full h-full rounded-[30px] h-[530px] flex justify-center items-center object-center flex-col gap-8 p-7 max-w-[720px] mx-auto">
+                            <div class="bg-white w-[170px] h-[170px] rounded-xl overflow-hidden">
+                                <Image
+                                    src="/img/calculator-option-1.png"
+                                    class="w-[170px] h-[170px] object-contain"
+                                    alt={slide.alt}
+                                    aspectRatio="16:9"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </div>
+                            <div class="flex gap-1">
+                                {Array.from({ length: slide.stars }).map((_, index) => (
+                                    <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.9765 0.927049C11.2759 0.00573826 12.5793 0.00573993 12.8787 0.927051L14.7861 6.79754C14.92 7.20957 15.3039 7.48853 15.7372 7.48853H21.9098C22.8785 7.48853 23.2813 8.72814 22.4975 9.29754L17.5038 12.9257C17.1533 13.1804 17.0067 13.6317 17.1405 14.0437L19.048 19.9142C19.3473 20.8355 18.2928 21.6017 17.5091 21.0323L12.5154 17.4041C12.1649 17.1495 11.6903 17.1495 11.3398 17.4041L6.34608 21.0323C5.56236 21.6017 4.50788 20.8355 4.80724 19.9142L6.71467 14.0437C6.84855 13.6317 6.70189 13.1803 6.3514 12.9257L1.35766 9.29754C0.57395 8.72814 0.976727 7.48853 1.94545 7.48853H8.11805C8.55128 7.48853 8.93523 7.20957 9.06911 6.79754L10.9765 0.927049Z" fill="#00984D"/>
+                                    </svg>
+                                ))}   
+                            </div>
+                            <div>
+                                <p class="text-xl font-regular text-black text-center">“{slide.desc}”</p>
+                            </div>
+                            <div>
+                                <p class="text-base font-bold text-black text-center">{slide.name}</p>
+                                <p class="text-base font-regular text-black text-center">{slide.role}</p>
+                            </div>
+                        </div>
+                    </div>
+                  </li>
+                )
+                )}
+              </ul>
+        </div>
+        
+      </section>
+</div>
+
+<script>
+    new Splide( '.splide' ).mount();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+

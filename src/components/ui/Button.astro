@@ -5,6 +5,7 @@ import type { CallToAction as Props } from '~/types';
 
 const {
   variant = 'secondary',
+  free = false,
   target,
   text = Astro.slots.render('default'),
   icon = '',
@@ -14,9 +15,10 @@ const {
 } = Astro.props;
 
 const variants = {
-  green: "bg-rs-green font-bold text-white text-xl rounded-full py-3 px-7 block w-max",
-  transparent: "font-bold text-black text-xl box-border border-black rounded-full py-3 px-7 border-2 block w-max"
+  green: "bg-rs-green font-bold text-white text-xl rounded-full py-3 px-7 block w-max relative",
+  transparent: "font-bold text-black text-xl box-border border-black rounded-full py-3 px-7 border-2 block w-max  dark:text-white dark:border-white relative"
 };
+
 ---
 {
   (
@@ -25,6 +27,12 @@ const variants = {
       {...rest}
       class={twMerge(variants[variant] || '')}
     >
+      {
+        free == "true" && (
+          <span class="bg-black rounded text-white text-xs font-medium py-1 px-1 top-[-10px] right-0 absolute">ZA DARMO</span>
+        )
+      }
+      
       <Fragment set:html={text} />
     </a>
   )

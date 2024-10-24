@@ -13,6 +13,9 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Calculator from '~/components/widgets/rocksoft/Calculator.astro';
+import Testimonials from '~/components/widgets/rocksoft/Testimonials.astro';
+import Contact from '~/components/widgets/rocksoft/Contact.astro';
+import About from '~/components/widgets/rocksoft/About.astro';
 
 const metadata = {
   title: 'Czysty dom, czysta planeta - Raypath International',
@@ -26,15 +29,11 @@ const metadata = {
   <Hero />
   <Whyus />
   <Calculator />
-
-
-
+  <Testimonials />
   <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    title="Odkryj więcej treści na naszym blogu"
-   
-  />
+  <BlogLatestPosts title="Odkryj więcej treści na naszym blogu" />
+  <Contact />
+  <About />
 
 
 </Layout>
