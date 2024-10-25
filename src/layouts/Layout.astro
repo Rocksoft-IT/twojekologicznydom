@@ -37,15 +37,45 @@ const { language, textDirection } = I18N;
     <Analytics />
 
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
 
     <!-- Comment the line below to disable View Transitions -->
     <ViewTransitions fallback="swap" />
   </head>
 
-  <body class="antialiased text-default bg-white tracking-tight">
+  <body class="antialiased text-default bg-white tracking-tight dark:bg-rs-dark-blue">
     <slot />
 
     <BasicScripts />
+
+    
+
+
+<script defer>
+    document.addEventListener("DOMContentLoaded", (event) => {
+      setIntervalSlider();
+    });
+
+    const setIntervalSlider = () => {
+      const intervalId = setInterval(() => {
+            if (checkIfItemsExists()) {
+              clearInterval(intervalId);
+            } else {
+              new Splide( '.splide' ).mount();
+            }
+        }, 2000);
+    }
+
+    const checkIfItemsExists = () => {
+      const splideContainer = document.querySelectorAll(".splide .splide__pagination li");
+      return splideContainer.length > 0;
+    }
+ 
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
   </body>
 </html>
