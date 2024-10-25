@@ -36,9 +36,9 @@ const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count }) : [];
 {
   APP_BLOG.isEnabled ? (
     <WidgetWrapper id={id} isDark={isDark} bg={bg}>
-      <section class="flex items-center py-20 bg-rs-light-green px-4">
+      <section class="flex items-center py-20 bg-rs-light-green dark:bg-rs-dark-blue px-4">
         <div class="max-w-screen-lg mx-auto">
-          <h2 class="font-bold md:text-5xl text-2xl mb-20 text-black text-center">Blog poświęcony zrównoważonemu sprzątaniu i trosce o środowisko</h2>
+          <h2 class="font-bold md:text-5xl text-2xl mb-20 text-black dark:text-white text-center">Blog poświęcony zrównoważonemu sprzątaniu i trosce o środowisko</h2>
           <Grid posts={posts} />
         </div>
       </section>

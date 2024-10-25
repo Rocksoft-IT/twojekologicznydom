@@ -35,7 +35,7 @@ const slides = [
                 (
                 <li class="splide__slide">
                     <div class="flex items-center">
-                        <div class="bg-rs-light-gray w-full h-full rounded-[30px] h-[530px] flex justify-center items-center object-center flex-col gap-8 p-7 max-w-[720px] mx-auto">
+                        <div class="bg-rs-light-gray dark:bg-[#0a0f39] w-full h-full rounded-[30px] h-[530px] flex justify-center items-center object-center flex-col gap-8 p-7 max-w-[720px] mx-auto">
                             <div class="bg-white w-[170px] h-[170px] rounded-xl overflow-hidden">
                                 <Image
                                     src="/img/calculator-option-1.png"
@@ -54,11 +54,11 @@ const slides = [
                                 ))}   
                             </div>
                             <div>
-                                <p class="text-xl font-regular text-black text-center">“{slide.desc}”</p>
+                                <p class="text-xl font-regular text-black dark:text-white text-center">“{slide.desc}”</p>
                             </div>
                             <div>
-                                <p class="text-base font-bold text-black text-center">{slide.name}</p>
-                                <p class="text-base font-regular text-black text-center">{slide.role}</p>
+                                <p class="text-base font-bold text-black dark:text-white text-center">{slide.name}</p>
+                                <p class="text-base font-regular text-black dark:text-white text-center">{slide.role}</p>
                             </div>
                         </div>
                     </div>

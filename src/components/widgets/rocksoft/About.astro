@@ -3,7 +3,7 @@ import Image from '~/components/common/Image.astro';
 ---
 
 
-<section class="flex items-center py-[90px] bg-rs-light-green px-4">
+<section class="flex items-center py-[90px] bg-rs-light-green px-4 dark:bg-rs-dark-blue">
     <div class="max-w-screen-lg mx-auto">
         
         <div class="grid gap-x-2 gap-y-12 grid-cols-1 md:grid-cols-about-grid">
@@ -21,7 +21,7 @@ import Image from '~/components/common/Image.astro';
                 />
             </div>
             <div class="px-0 md:px-10 flex flex-col justify-center">
-                <h2 class="font-bold md:text-5xl text-2xl text-black mb-10">Krótko o Raypath</h2>
+                <h2 class="font-bold md:text-5xl text-2xl text-black mb-10 dark:text-white">Krótko o Raypath</h2>
                 <Image
                 src="/img/about.png"
                 class="w-full block md:hidden mb-10"
@@ -33,9 +33,9 @@ import Image from '~/components/common/Image.astro';
                 loading="lazy"
                 decoding="async"
                 />
-                <p  class="font-regular text-base text-black mb-10"><strong>Od niemal 30 lat</strong> Raypath umożliwia ludziom z różnych zakątków świata dostęp do produktów <strong>przyjaznych środowisku naturalnemu.</strong></p>
+                <p  class="font-regular text-base text-black mb-10 dark:text-white"><strong>Od niemal 30 lat</strong> Raypath umożliwia ludziom z różnych zakątków świata dostęp do produktów <strong>przyjaznych środowisku naturalnemu.</strong></p>
                 <br />
-                <p class="font-regular text-base text-black">W naszej ofercie znajdziesz przede wszystkim <strong>innowacyjne produkty</strong> do czyszczenia, które zostały <strong>zaprojektowane z myślą o środowisku naturalnym</strong>. Czyściki Raypath działają przy użyciu samej wody, która ma neutralny wpływ na nasze zdrowie.</p>
+                <p class="font-regular text-base text-black dark:text-white">W naszej ofercie znajdziesz przede wszystkim <strong>innowacyjne produkty</strong> do czyszczenia, które zostały <strong>zaprojektowane z myślą o środowisku naturalnym</strong>. Czyściki Raypath działają przy użyciu samej wody, która ma neutralny wpływ na nasze zdrowie.</p>
             </div>
         </div>
     </div>

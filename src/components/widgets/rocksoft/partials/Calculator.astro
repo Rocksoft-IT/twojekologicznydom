@@ -12,37 +12,37 @@ import Image from '~/components/common/Image.astro';
         </div>
         <div>
             <div class="grid grid-cols-2 gap-3">
-                <div class="calculator-select-item cursor-pointer bg-rs-light-gray rounded-lg p-4 box-border" data-option-id="1" onclick="window.calcForm.selectOption(this)" >
+                <div class="calculator-select-item cursor-pointer bg-rs-light-gray dark:bg-rs-dark-blue  rounded-lg p-4 box-border border-4 border-transparent" data-option-id="1" onclick="window.calcForm.selectOption(this)" >
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
                         <div>
                             <Image
                                 src="/img/calculator-option-1.png"
                                 class="w-full"
-                                alt=""
+                                alt="MINI SET zestaw domowy"
                                 aspectRatio="16:9"
                                 loading="lazy"
                                 decoding="async"
                             />
                         </div>
                         <div class="flex items-center">
-                            <span class="text-xl font-light text-black text-center md:text-left">MINI SET zestaw domowy</span>
+                            <span class="text-xl font-regular text-black text-center md:text-left dark:text-white">MINI SET zestaw domowy</span>
                         </div>
                     </div>
                 </div>
-                <div class="calculator-select-item cursor-pointer bg-rs-light-gray rounded-lg p-4 box-border" data-option-id="2" onclick="window.calcForm.selectOption(this)">
+                <div class="calculator-select-item cursor-pointer bg-rs-light-gray dark:bg-rs-dark-blue  rounded-lg p-4 box-border border-4 border-transparent" data-option-id="2" onclick="window.calcForm.selectOption(this)">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
                         <div>
                             <Image
-                                src="/img/calculator-option-1.png"
+                                src="/img/calculator-option-2.png"
                                 class="w-full"
-                                alt=""
+                                alt="Zestaw podstawowy HOUSE SET"
                                 aspectRatio="16:9"
                                 loading="lazy"
                                 decoding="async"
                             />
                         </div>
                         <div class="flex items-center">
-                            <span class="text-xl font-light text-black text-center md:text-left">MINI SET zestaw domowy</span>
+                            <span class="text-xl font-regular text-black text-center md:text-left dark:text-white">Zestaw podstawowy HOUSE SET</span>
                         </div>
                     </div>
                 </div>
@@ -52,12 +52,12 @@ import Image from '~/components/common/Image.astro';
 
     <div class="calculator-item flex flex-col gap-3" data-input-id="1">
         <div class="calculator-header">
-            <h3 class="text-base font-bold text-black">Ile masz okien w domu?</h3>
+            <h3 class="text-base font-bold text-black dark:text-white">Ile masz okien w domu?</h3>
         </div>
         <div>
             <div class="grid-cols-calc-input-grid grid gap-1">
                 <div>
-                    <input type="number" id="windowCount" class="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none calculator-input w-full bg-rs-light-gray rounded-full h-12 px-4 text-black" value="0" min="0" data-name="windowCount" onkeyup="window.calcForm.keyUpInput(this)" />
+                    <input type="number" id="windowCount" class="dark:bg-rs-dark-blue dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none calculator-input w-full bg-rs-light-gray rounded-full h-12 px-4 text-black" value="0" min="0" data-name="windowCount" onkeyup="window.calcForm.keyUpInput(this)" />
                 </div>
                 <div>
                     <button class="h-12 w-12 flex items-center justify-center bg-rs-red rounded-full text-2xl font-bold text-white dark:text-black" onclick="window.calcForm.decreaseValueButtonHandle(this)">-</button>
@@ -71,12 +71,12 @@ import Image from '~/components/common/Image.astro';
 
     <div class="calculator-item flex flex-col gap-3" data-input-id="2">
         <div class="calculator-header">
-            <h3 class="text-base font-bold text-black">Ile masz łazienek w domu?</h3>
+            <h3 class="text-base font-bold text-black dark:text-white">Ile masz łazienek w domu?</h3>
         </div>
         <div>
             <div class="grid-cols-calc-input-grid grid gap-1">
                 <div>
-                    <input id="bathroomCount" type="number" class="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none calculator-input w-full bg-rs-light-gray rounded-full h-12 px-4 text-black" value="0"  min="0" data-name="bathroomCount" onkeyup="window.calcForm.keyUpInput(this)" />
+                    <input id="bathroomCount" type="number" class="dark:bg-rs-dark-blue dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none calculator-input w-full bg-rs-light-gray rounded-full h-12 px-4 text-black" value="0"  min="0" data-name="bathroomCount" onkeyup="window.calcForm.keyUpInput(this)" />
                 </div>
                 <div>
                     <button class="h-12 w-12 flex items-center justify-center bg-rs-red rounded-full text-2xl font-bold text-white dark:text-black" onclick="window.calcForm.decreaseValueButtonHandle(this)">-</button>
@@ -90,12 +90,12 @@ import Image from '~/components/common/Image.astro';
 
     <div class="calculator-item flex flex-col gap-3" data-input-id="3">
         <div class="calculator-header">
-            <h3 class="text-base font-bold text-black">Jak duży jest Twój dom (w m²)?</h3>
+            <h3 class="text-base font-bold text-black dark:text-white">Jak duży jest Twój dom (w m²)?</h3>
         </div>
         <div>
             <div class="grid-cols-calc-input-grid grid gap-1">
                 <div>
-                    <input id="houseArea" type="number" class="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none calculator-input w-full bg-rs-light-gray rounded-full h-12 px-4 text-black" value="0" min="0" data-name="houseArea" onkeyup="window.calcForm.keyUpInput(this)" />
+                    <input id="houseArea" type="number" class="dark:bg-rs-dark-blue dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none calculator-input w-full bg-rs-light-gray rounded-full h-12 px-4 text-black" value="0" min="0" data-name="houseArea" onkeyup="window.calcForm.keyUpInput(this)" />
                 </div>
                 <div>
                     <button class="h-12 w-12 flex items-center justify-center bg-rs-red rounded-full text-2xl font-bold text-white dark:text-black" onclick="window.calcForm.decreaseValueButtonHandle(this)">-</button>
@@ -195,16 +195,16 @@ import Image from '~/components/common/Image.astro';
             allClasses: [
                 'bg-rs-light-gray',
                 'border-green-700',
-                'border-4',
-                'bg-rs-light-green'
+                'bg-rs-light-green',
+                'border-transparent'
             ],
             active: [
                 'border-green-700',
-                'border-4',
                 'bg-rs-light-green'
             ],
             notActive: [
-                'bg-rs-light-gray'
+                'bg-rs-light-gray',
+                'border-transparent'
             ]
         },
         unlockResult: function() {
