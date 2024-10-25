@@ -14,8 +14,8 @@ const { id, isDark = false, containerClass = '', bg, as = 'section' } = Astro.pr
 const WrapperTag = as;
 ---
 
-<WrapperTag class="relative not-prose scroll-mt-[72px]" {...id ? { id } : {}}>
-  <div class="mx-auto px-6 sm:px-6 max-w-3xl">
+<WrapperTag class="relative not-prose scroll-mt-[72px] flex items-center py-20 bg-rs-light-green dark:bg-rs-dark-blue px-4" {...id ? { id } : {}}>
+  <div class="mx-auto max-w-[1200px]">
     <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
       <slot name="bg">
         {bg ? <Fragment set:html={bg} /> : <Background isDark={isDark} />}
