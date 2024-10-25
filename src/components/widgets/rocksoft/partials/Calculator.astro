@@ -112,17 +112,17 @@ import Image from '~/components/common/Image.astro';
     </div>
 
     <div class="calculator-result hidden">
-        <h3  class="text-xl font-bold text-black">Wynik</h3>
+        <h3  class="text-xl font-bold text-black dark:text-white">Wynik</h3>
         <hr class="mb-5  mt-5" />
-        <p class="font-regular text-base text-black mb-5">Tyle płacisz za chemię, wodę i prąd do sprzątania przy tradycyjnym sposobie:</p>
+        <p class="font-regular text-base text-black dark:text-white mb-5">Tyle płacisz za chemię, wodę i prąd do sprzątania przy tradycyjnym sposobie:</p>
         <div>
-            <p class="font-regular text-base text-black mb-5"><span id="resultMoneyPerYear" class="text-base font-bold bg-rs-light-green py-1 px-3 rounded-lg shadow-rs-shadow">0 zł</span> rocznie</p>
+            <p class="font-regular text-base text-black dark:text-white mb-5"><span id="resultMoneyPerYear" class="text-base font-bold bg-rs-light-green py-1 px-3 rounded-lg shadow-rs-shadow dark:bg-rs-dark-blue">0 zł</span> rocznie</p>
         </div>
-        <p class="font-regular text-base text-black mb-5">Zestaw zwróci się po około:</p>
+        <p class="font-regular text-base text-black dark:text-white mb-5">Zestaw zwróci się po około:</p>
         <div>
-            <p class="font-regular text-base text-black mb-5"><span id="resultReturn" class="text-base font-bold bg-rs-light-green py-1 px-3 rounded-lg shadow-rs-shadow">0</span> miesiącach!</p>
+            <p class="font-regular text-base text-black dark:text-white mb-5"><span id="resultReturn" class="text-base font-bold bg-rs-light-green py-1 px-3 rounded-lg shadow-rs-shadow dark:bg-rs-dark-blue">0</span> miesiącach!</p>
         </div>
-        <p class="font-regular text-base text-black">A produkty Raypath mogą Ci służyć nawet <strong>10-15 lat</strong> i <strong>nie zawierają chemii!</strong></p>
+        <p class="font-regular text-base text-black dark:text-white">A produkty Raypath mogą Ci służyć nawet <strong>10-15 lat</strong> i <strong>nie zawierają chemii!</strong></p>
     </div>
 </div>
 
@@ -134,8 +134,7 @@ import Image from '~/components/common/Image.astro';
         zestawPodstawowyHouse: 2965
     }
 
-    window.onload = (event) => {
-
+    document.addEventListener("DOMContentLoaded", (event) => {
         const areas = [
             'windowCount',
             'bathroomCount',
@@ -147,7 +146,9 @@ import Image from '~/components/common/Image.astro';
         areas.forEach( el => {
             setInitialValueOnLocalStorage(el);
         });
-    }
+    });
+
+
     
     function showResults(resultMoneyPerYearValue, resultReturnValue) {
         
