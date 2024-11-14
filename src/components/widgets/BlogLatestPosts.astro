@@ -40,6 +40,11 @@ const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count }) : [];
         <div class="max-w-screen-lg mx-auto">
           <h2 class="font-bold md:text-5xl text-2xl mb-20 text-black dark:text-white text-center">Blog poświęcony zrównoważonemu sprzątaniu i trosce o środowisko</h2>
           <Grid posts={posts} />
+          <div class="mt-10 flex justify-center">
+            <a href="/blog" class="font-bold text-black text-xl box-border border-black rounded-full py-3 px-7 border-2 block w-max dark:text-white dark:border-white relative" data-astro-source-file="/home/mlipski/projekty/twojekologicznydom/src/components/ui/Button.astro" data-astro-source-loc="29:6">
+              Zobacz więcej postów
+            </a>
+          </div>
         </div>
       </section>
 
