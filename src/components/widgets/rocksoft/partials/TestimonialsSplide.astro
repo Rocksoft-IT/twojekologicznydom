@@ -4,23 +4,51 @@ import Image from '~/components/common/Image.astro';
 //TODO connect with real testimonials
 const slides = [
     {
-        alt: 'Our company',
-        stars: 4,
-        desc: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.”',
-        name: 'John Doe',
-        role: 'CEO',
+        alt: 'Warszawa',
+        stars: 5,
+        desc: 'Używam ściereczek Raypath od ponad roku i jestem zachwycona! Nie tylko świetnie czyszczą wszystkie powierzchnie w moim domu, ale też nie muszę już kupować tyle chemicznych środków czystości. To oszczędność dla portfela i dla środowiska!',
+        name: 'Anna K',
+        role: 'Warszawa',
         img: '/img/calculator-option-1.png',
         active: false
     },
     {
-        alt: 'Our company',
-        stars: 1,
-        desc: 'Some desc',
-        name: 'John Doe',
-        role: 'CEO',
+        alt: 'Kraków',
+        stars: 5,
+        desc: 'Jako alergik, zawsze miałem problem ze środkami czystości. Odkąd przeszedłem na system Raypath, moje objawy znacznie się zmniejszyły. Plus, dom lśni czystością bez użycia agresywnych detergentów. Polecam!',
+        name: 'Marek W.',
+        role: 'Kraków',
         img: '/img/calculator-option-1.png',
         active: false
     },
+
+    {
+        alt: 'Gdańsk',
+        stars: 5,
+        desc: 'Początkowo byłam sceptyczna co do ceny produktów Raypath, ale po pół roku użytkowania widzę, że to była świetna inwestycja. Ściereczki są tak trwałe i skuteczne, że praktycznie przestałam kupować inne środki czystości. W dłuższej perspektywie to naprawdę się opłaca.',
+        name: 'Karolina S.',
+        role: 'Gdańsk',
+        img: '/img/calculator-option-1.png',
+        active: false
+    },
+    {
+        alt: 'Wrocław',
+        stars: 5,
+        desc: 'Jako właściciel małej firmy sprzątającej, zdecydowałem się zainwestować w produkty Raypath. To była najlepsza decyzja biznesowa, jaką podjąłem! Moi klienci są zachwyceni efektami, a ja oszczędzam na środkach chemicznych. Win-win!',
+        name: 'Tomasz B.',
+        role: 'Wrocław',
+        img: '/img/calculator-option-1.png',
+        active: false
+    },
+    {
+        alt: 'Poznań',
+        stars: 5,
+        desc: 'Raypath to nie tylko czystość, ale też ekologia. Czuję, że robiąc coś tak prostego jak sprzątanie, przyczyniamy się do ochrony środowiska. To wspaniałe uczucie!',
+        name: 'Magdalena O.',
+        role: 'Poznań',
+        img: '/img/calculator-option-1.png',
+        active: false
+    }
 ];
 
 ---
@@ -36,7 +64,7 @@ const slides = [
                 <li class="splide__slide">
                     <div class="flex items-center">
                         <div class="bg-rs-light-gray dark:bg-[#0a0f39] w-full h-full rounded-[30px] h-[530px] flex justify-center items-center object-center flex-col gap-8 p-7 max-w-[720px] mx-auto">
-                            <div class="bg-white w-[170px] h-[170px] rounded-xl overflow-hidden">
+                            {/* <div class="bg-white w-[170px] h-[170px] rounded-xl overflow-hidden">
                                 <Image
                                     src="/img/calculator-option-1.png"
                                     class="w-[170px] h-[170px] object-contain"
@@ -45,7 +73,7 @@ const slides = [
                                     loading="lazy"
                                     decoding="async"
                                 />
-                            </div>
+                            </div> */}
                             <div class="flex gap-1">
                                 {Array.from({ length: slide.stars }).map((_, index) => (
                                     <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
