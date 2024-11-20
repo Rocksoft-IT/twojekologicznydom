@@ -23,6 +23,12 @@ export interface Props {
 
 const { metadata = {} } = Astro.props;
 const { language, textDirection } = I18N;
+
+
+
+const splideJsUrl = new URL('/assets/js/splide.min.js', Astro.site).href;
+const splideCssUrl = new URL('/assets/css/splide.min.css', Astro.site).href;
+
 ---
 
 <!doctype html>
@@ -36,7 +42,7 @@ const { language, textDirection } = I18N;
     <SiteVerification />
     <Analytics />
 
-    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css" rel="stylesheet">
+    <link href={splideCssUrl} rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -66,7 +72,7 @@ const { language, textDirection } = I18N;
             } else {
               new Splide( '.splide' ).mount();
             }
-        }, 2000);
+        }, 200);
     }
 
     const checkIfItemsExists = () => {
@@ -75,7 +81,8 @@ const { language, textDirection } = I18N;
     }
  
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+  <script src={splideJsUrl} type="module"></script>
 
   </body>
 </html>
