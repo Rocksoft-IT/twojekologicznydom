@@ -60,8 +60,12 @@ const splideCssUrl = new URL('/assets/css/splide.min.css', Astro.site).href;
 
 
 <script defer>
+    const testimonialsSliderSectionDOM = document.getElementById("testimonialsSplide");
+
     document.addEventListener("DOMContentLoaded", (event) => {
-      setIntervalSlider();
+      if (testimonialsSliderSectionDOM !== null) {
+        setIntervalSlider();
+      }
     });
 
     const setIntervalSlider = () => {
