@@ -5,7 +5,6 @@ import type { CallToAction as Props } from '~/types';
 
 const {
   variant = 'secondary',
-  free = false,
   target,
   text = Astro.slots.render('default'),
   icon = '',
@@ -15,25 +14,27 @@ const {
 } = Astro.props;
 
 const variants = {
-  green: "bg-rs-green font-bold text-white text-xl rounded-full py-3 px-7 block w-max relative",
-  transparent: "font-bold text-black text-xl box-border border-black rounded-full py-3 px-7 border-2 block w-max  dark:text-white dark:border-white relative"
+  primary: 'btn-primary',
+  secondary: 'btn-secondary',
+  tertiary: 'btn btn-tertiary',
+  link: 'cursor-pointer hover:text-primary',
 };
-
 ---
+
 {
-  (
-    <a 
+  type === 'button' || type === 'submit' || type === 'reset' ? (
+    <button type={type} class={twMerge(variants[variant] || '', className)} {...rest}>
+      <Fragment set:html={text} />
+      {icon && <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" />}
+    </button>
+  ) : (
+    <a
+      class={twMerge(variants[variant] || '', className)}
       {...(target ? { target: target, rel: 'noopener noreferrer' } : {})}
       {...rest}
-      class={twMerge(variants[variant] || '')}
     >
-      {
-        free == "true" && (
-          <span class="bg-black rounded text-white text-xs font-medium py-1 px-1 top-[-10px] right-0 absolute dark:bg-white dark:text-black">ZA DARMO</span>
-        )
-      }
-      
       <Fragment set:html={text} />
+      {icon && <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" />}
     </a>
   )
 }
