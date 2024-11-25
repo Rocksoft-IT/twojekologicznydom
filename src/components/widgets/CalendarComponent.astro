@@ -1,4 +1,9 @@
-<section class="flex items-center pt-24 pb-24 dark:bg-rs-dark-blue-2 px-4" id="advantages">
+---
+import Contact from "./rocksoft/Contact.astro";
+import Testimonials from "./rocksoft/Testimonials.astro";
+---
+
+<section class="flex items-center pt-24 pb-24 dark:bg-rs-dark-blue-2 px-4 bg-[#F2FAF6]" id="advantages">
     <div class="max-w-screen-lg mx-auto">
         <h2 class="font-bold md:text-5xl text-2xl text-black dark:text-white text-center max-w-4xl leading-[56px]">Umów darmową prezentację</h2>
         <div class="block">
@@ -12,3 +17,6 @@
         </div>
     </div>
 </section>
+
+<Testimonials />
+<Contact />
