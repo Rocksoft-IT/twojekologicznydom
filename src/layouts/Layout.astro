@@ -13,7 +13,8 @@ import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
 
 // Comment the line below to disable View Transitions
-import { ViewTransitions } from 'astro:transitions';
+// import { ViewTransitions } from 'astro:transitions';
+// import { onMount } from 'solid-js';
 
 import type { MetaData as MetaDataType } from '~/types';
 
@@ -23,8 +24,6 @@ export interface Props {
 
 const { metadata = {} } = Astro.props;
 const { language, textDirection } = I18N;
-
-
 
 const splideJsUrl = new URL('/assets/js/splide.min.js', Astro.site).href;
 const splideCssUrl = new URL('/assets/css/splide.min.css', Astro.site).href;
@@ -49,7 +48,7 @@ const splideCssUrl = new URL('/assets/css/splide.min.css', Astro.site).href;
     <link rel="icon" type="image/x-icon" href="/src/assets/favicons/favicon.png" />
 
     <!-- Comment the line below to disable View Transitions -->
-    <ViewTransitions fallback="swap" />
+    <!-- <ViewTransitions fallback="swap" /> -->
   </head>
 
   <body class="antialiased text-default bg-white tracking-tight dark:bg-rs-dark-blue">
