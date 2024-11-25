@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+  font-family: "Montserrat", serif;
+}
+
 @layer utilities {
   .bg-page {
     background-color: var(--aw-color-bg-page);

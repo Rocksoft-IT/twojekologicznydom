@@ -1,0 +1,322 @@
+---
+import Image from '~/components/common/Image.astro';
+
+
+---
+
+<div class="bg-white p-6 rounded-lg max-w-3xl mx-auto flex flex-col gap-7 dark:bg-rs-dark-blue-3">
+
+    <div class="calculator-item flex flex-col gap-3">
+        <div class="calculator-header">
+            <h3 class="text-base font-bold text-black dark:text-white">Wybierz zestaw</h3>
+        </div>
+        <div>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="calculator-select-item cursor-pointer bg-rs-light-gray dark:bg-rs-dark-blue  rounded-lg p-4 box-border border-4 border-transparent" data-option-id="1" onclick="window.calcForm.selectOption(this)" >
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        <div>
+                            <Image
+                                src="/img/calculator-option-1.png"
+                                class="w-full"
+                                alt="MINI SET zestaw domowy"
+                                aspectRatio="16:9"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-xl font-regular text-black text-center md:text-left dark:text-white">MINI SET zestaw domowy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-select-item cursor-pointer bg-rs-light-gray dark:bg-rs-dark-blue  rounded-lg p-4 box-border border-4 border-transparent" data-option-id="2" onclick="window.calcForm.selectOption(this)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        <div>
+                            <Image
+                                src="/img/calculator-option-2.png"
+                                class="w-full"
+                                alt="Zestaw podstawowy HOUSE SET"
+                                aspectRatio="16:9"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-xl font-regular text-black text-center md:text-left dark:text-white">Zestaw podstawowy HOUSE SET</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="calculator-item flex flex-col gap-3" data-input-id="1">
+        <div class="calculator-header">
+            <h3 class="text-base font-bold text-black dark:text-white">Ile masz okien w domu?</h3>
+        </div>
+        <div>
+            <div class="grid-cols-calc-input-grid grid gap-1">
+                <div>
+                    <input type="number" id="windowCount" class="dark:bg-rs-dark-blue dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none calculator-input w-full bg-rs-light-gray rounded-full h-12 px-4 text-black" value="0" min="0" data-name="windowCount" onkeyup="window.calcForm.keyUpInput(this)" />
+                </div>
+                <div>
+                    <button class="h-12 w-12 flex items-center justify-center bg-rs-red rounded-full text-2xl font-bold text-white dark:text-black" onclick="window.calcForm.decreaseValueButtonHandle(this)">-</button>
+                </div>
+                <div>
+                    <button class="h-12 w-12 flex items-center justify-center bg-rs-green rounded-full text-2xl font-bold text-white dark:text-black" onclick="window.calcForm.increaseValueButtonHandle(this)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="calculator-item flex flex-col gap-3" data-input-id="2">
+        <div class="calculator-header">
+            <h3 class="text-base font-bold text-black dark:text-white">Ile masz łazienek w domu?</h3>
+        </div>
+        <div>
+            <div class="grid-cols-calc-input-grid grid gap-1">
+                <div>
+                    <input id="bathroomCount" type="number" class="dark:bg-rs-dark-blue dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none calculator-input w-full bg-rs-light-gray rounded-full h-12 px-4 text-black" value="0"  min="0" data-name="bathroomCount" onkeyup="window.calcForm.keyUpInput(this)" />
+                </div>
+                <div>
+                    <button class="h-12 w-12 flex items-center justify-center bg-rs-red rounded-full text-2xl font-bold text-white dark:text-black" onclick="window.calcForm.decreaseValueButtonHandle(this)">-</button>
+                </div>
+                <div>
+                    <button class="h-12 w-12 flex items-center justify-center bg-rs-green rounded-full text-2xl font-bold text-white dark:text-black" onclick="window.calcForm.increaseValueButtonHandle(this)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="calculator-item flex flex-col gap-3" data-input-id="3">
+        <div class="calculator-header">
+            <h3 class="text-base font-bold text-black dark:text-white">Jak duży jest Twój dom (w m²)?</h3>
+        </div>
+        <div>
+            <div class="grid-cols-calc-input-grid grid gap-1">
+                <div>
+                    <input id="houseArea" type="number" class="dark:bg-rs-dark-blue dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none calculator-input w-full bg-rs-light-gray rounded-full h-12 px-4 text-black" value="0" min="0" data-name="houseArea" onkeyup="window.calcForm.keyUpInput(this)" />
+                </div>
+                <div>
+                    <button class="h-12 w-12 flex items-center justify-center bg-rs-red rounded-full text-2xl font-bold text-white dark:text-black" onclick="window.calcForm.decreaseValueButtonHandle(this)">-</button>
+                </div>
+                <div>
+                    <button class="h-12 w-12 flex items-center justify-center bg-rs-green rounded-full text-2xl font-bold text-white dark:text-black" onclick="window.calcForm.increaseValueButtonHandle(this)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="calculator-item">
+        <button class="h-12 w-full text-center text-white rounded-full text-xl font-bold bg-black" onclick="window.calcForm.submitForm()">Oblicz</button>
+    </div>
+
+    <div class="calculator-result hidden">
+        <h3  class="text-xl font-bold text-black dark:text-white">Wynik</h3>
+        <hr class="mb-5  mt-5" />
+        <p class="font-regular text-base text-black dark:text-white mb-5">Tyle płacisz za chemię, wodę i prąd do sprzątania przy tradycyjnym sposobie:</p>
+        <div>
+            <p class="font-regular text-base text-black dark:text-white mb-5"><span id="resultMoneyPerYear" class="text-base font-bold bg-rs-light-green py-1 px-3 rounded-lg shadow-rs-shadow dark:bg-rs-dark-blue">0 zł</span> rocznie</p>
+        </div>
+        <p class="font-regular text-base text-black dark:text-white mb-5">Zestaw zwróci się po około:</p>
+        <div>
+            <p class="font-regular text-base text-black dark:text-white mb-5"><span id="resultReturn" class="text-base font-bold bg-rs-light-green py-1 px-3 rounded-lg shadow-rs-shadow dark:bg-rs-dark-blue">0</span> miesiącach!</p>
+        </div>
+        <p class="font-regular text-base text-black dark:text-white">A produkty Raypath mogą Ci służyć nawet <strong>10-15 lat</strong> i <strong>nie zawierają chemii!</strong></p>
+    </div>
+</div>
+
+
+<script>
+
+    const prices = {
+        miniZestawDomowy: 659,
+        zestawPodstawowyHouse: 2965
+    }
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+        const areas = [
+            'windowCount',
+            'bathroomCount',
+            'houseArea'
+        ];
+
+        localStorage.setItem("optionSelected", 0);
+
+        areas.forEach( el => {
+            setInitialValueOnLocalStorage(el);
+        });
+    });
+
+
+    
+    function showResults(resultMoneyPerYearValue, resultReturnValue) {
+        
+        const resultMoneyPerYear = document.getElementById("resultMoneyPerYear");
+        const resultReturn = document.getElementById("resultReturn");
+
+        resultMoneyPerYear.innerText = resultMoneyPerYearValue;
+        resultReturn.innerText = resultReturnValue;
+    }
+
+    function setInitialValueOnLocalStorage(element) {
+        const selectedInput = document.getElementById(element);
+        localStorage.setItem(element, selectedInput.value);
+    }
+
+    const calcState = {
+        setWindowCount: (number) => {
+            localStorage.setItem("windowCount", number);
+        },
+        setOptionSelected: (number) => {
+            localStorage.setItem("optionSelected", number);
+        },
+        setBathroomCount: (number) => {
+            localStorage.setItem("bathroomCount", number);
+        },
+        setHouseArea: (number) => {
+            localStorage.setItem("houseArea", number);
+        },
+        getWindowCount: () => {
+            return localStorage.getItem("windowCount");
+        },
+        getBathroomCount: () => {
+            return localStorage.getItem("bathroomCount");
+        },
+        getHouseArea: () => {
+            return localStorage.getItem("houseArea");
+        },
+        getOptionSelected: () => {
+            return localStorage.getItem("optionSelected");
+        }
+    }
+
+    const calcForm = {
+        classesUntilOptionSelect: {
+            allClasses: [
+                'bg-rs-light-gray',
+                'border-green-700',
+                'bg-rs-light-green',
+                'border-transparent'
+            ],
+            active: [
+                'border-green-700',
+                'bg-rs-light-green'
+            ],
+            notActive: [
+                'bg-rs-light-gray',
+                'border-transparent'
+            ]
+        },
+        unlockResult: function() {
+            const calcResult = document.querySelector(".calculator-result");
+            calcResult.classList.remove("hidden");
+        },
+        calcResult: function() {
+            const bathroomCount = calcState.getBathroomCount();
+            const houseArea = calcState.getHouseArea();
+            const windowCount = calcState.getWindowCount();
+            const optionSelected = calcState.getOptionSelected();
+
+            const result = {
+                moneyPerYear: null,
+                returnTime: null
+            };
+
+            
+            switch(parseInt(optionSelected)) {
+                case 1:
+                    const calcMoneyPerYear1 = (windowCount * 0.29 + bathroomCount * 14 + houseArea * 0.1 + 6.67) * 1.1 * 12;
+                    const calcReturnResult1 = 12 * prices.miniZestawDomowy/calcMoneyPerYear1;
+                    result.moneyPerYear = calcMoneyPerYear1.toFixed(2) + " zł";
+                    result.returnTime = Math.round(calcReturnResult1);
+                    return result;
+                break;
+                case 2:
+                    const calcMoneyPerYear2 = (windowCount * 0.29 + bathroomCount * 14 + houseArea * 0.1 + 6.67) * 1.5 * 12;
+                    const calcReturnResult2 = 12 * prices.zestawPodstawowyHouse/calcMoneyPerYear2;
+                    result.moneyPerYear = calcMoneyPerYear2.toFixed(2);
+                    result.returnTime = Math.round(calcReturnResult2);
+                    return result;
+                break;
+            }
+        },
+        validateForm: function() {
+            const bathroomCount = calcState.getBathroomCount();
+            const houseArea = calcState.getHouseArea();
+            const windowCount = calcState.getWindowCount();
+            const optionSelected = calcState.getOptionSelected();
+
+            const checkInputs = parseInt(bathroomCount) > 0 && parseInt(houseArea) > 0 && parseInt(windowCount) > 0;
+            const checkSelect = optionSelected != null && parseInt(optionSelected) === 1 || parseInt(optionSelected) === 2;
+
+            if (checkInputs && checkSelect) {
+                return true;
+            } else {
+                alert("Wybierz zestaw i wprowadź poprawne wartości!");
+                return false;
+            }
+        },
+        submitForm: function() {
+            if (this.validateForm()) {
+                this.unlockResult();
+                showResults(this.calcResult().moneyPerYear, this.calcResult().returnTime);
+            }
+        },
+        saveState: function(name, value) {
+            localStorage.setItem(name, value);
+        },
+        keyUpInput: function(element) {
+            const value = element.value;
+            const name = element.dataset.name;
+
+            this.saveState(name, value);
+        },
+        increaseValueButtonHandle: function(element) {
+            const getInput = element.parentNode.parentNode.parentNode.parentNode.querySelector(".calculator-input");
+            getInput.value = parseInt(getInput.value) + 1;
+
+            this.saveState(getInput.dataset.name, getInput.value);
+        },
+        decreaseValueButtonHandle: function(element) {
+            const getInput = element.parentNode.parentNode.parentNode.parentNode.querySelector(".calculator-input");
+            if (parseInt(getInput.value) > 0) {
+                getInput.value = parseInt(getInput.value) - 1;
+                this.saveState(getInput.dataset.name, getInput.value);
+            }
+        },
+        changeClassesOnOption: function(element, isActive) {
+            element.classList.remove(...this.classesUntilOptionSelect.allClasses);
+            switch(isActive) {
+                case 'true':
+                    element.classList.add(...this.classesUntilOptionSelect.active);
+                break;
+                case 'false':
+                    element.classList.add(...this.classesUntilOptionSelect.notActive);
+                break;
+            }
+        },
+        modifyClassesOnOptions: function(activeElement) {
+            const optionSelected = window.calcState.getOptionSelected();
+            const allOptions = document.querySelectorAll(".calculator-select-item");
+
+            allOptions.forEach( el => {
+                if (parseInt(el.dataset.optionId) === parseInt(optionSelected)) {
+                    this.changeClassesOnOption(el, 'true');
+                } else {
+                    this.changeClassesOnOption(el, 'false');
+                }
+            });
+        },
+        selectOption: function(element) {
+            const currentOptionId = element.dataset.optionId;
+            window.calcState.setOptionSelected(currentOptionId);
+            this.modifyClassesOnOptions(element);
+        },
+
+    }
+    window.calcState = calcState;
+    window.calcForm = calcForm;
+
+
+</script>

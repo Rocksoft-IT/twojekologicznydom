@@ -1,0 +1,54 @@
+---
+import Button2 from '~/components/ui/Button2.astro';
+
+import type { Hero as Props } from '~/types';
+import HeroImage from './partials/hero-image.astro';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline,
+
+  content = await Astro.slots.render('content'),
+  actions = await Astro.slots.render('actions'),
+  image = await Astro.slots.render('image'),
+
+  id,
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+
+<section class="py-[50px] md:py-[100px] flex items-center p-5 dark:bg-rs-dark-blue">
+  <div class="max-w-screen-lg mx-auto">
+    <div class="grid md:grid-cols-hero-grid gap-x-8">
+      <div>
+        <h1 class="font-bold text-3xl md:text-7xl text-black text-center md:text-left dark:text-white">
+          Rewolucja wśród<br />
+          środków czystości
+        </h1>
+        <div class="block md:hidden">
+          <HeroImage />
+        </div>
+        
+        <div class="flex gap-6 mt-7 md:flex-row flex-col items-center md:items-start">
+          <Button2 variant="green" free="true" class={`md:px-3 px-3`} href="/calendar" target="_blank">
+            Umów prezentację
+          </Button2>
+          <Button2 variant="transparent" free="false" class={`md:px-3 px-3`} href="/#calc">
+            Oblicz oszczędności
+          </Button2>
+        </div>
+        <p class="text-base md:text-xl font-normal text-black mt-7 text-center md:text-left dark:text-white">Przewiń dalej, aby dowiedzieć się więcej</p>
+        <a href="/#advantages" class="w-16 h-16 flex items-center justify-center rounded-full bg-rs-light-green mt-6 mx-auto md:mx-0">
+          <svg width="30" height="18" viewBox="0 0 30 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.53479 2.76738L15 15.2326L27.4653 2.76738" stroke="#00984D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>            
+        </a>
+      </div>
+      <div class="md:block hidden">
+        <HeroImage />
+      </div>
+    </div>
+  </div>
+</section>

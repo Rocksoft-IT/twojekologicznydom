@@ -1,0 +1,34 @@
+---
+import Logo from "~/components/Logo.astro";
+import Button from "~/components/ui/Button.astro";
+---
+
+<footer class="dark:bg-rs-dark-blue">
+
+    <div class="bg-white rounded-lg max-w-screen-lg mx-auto flex flex-col gap-7 py-12 px-4 dark:bg-rs-dark-blue">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-footer-grid gap-y-10">
+            <div class="md:order-1 lg:order-1">
+                <Logo />
+            </div>
+            <div class="md:order-3 lg:order-2">
+                <ul class="leading-9">
+                    <li><a href="/#about" class="text-xl">O Raypath</a></li>
+                    <li><a href="/#advantages" class="text-xl">Kluczowe zalety</a></li>
+                    <li><a href="/#calc" class="text-xl">Kalkulator oszczędności</a></li>
+                </ul>
+            </div>
+            <div class="md:order-4 lg:order-3">
+                <ul class="leading-9">
+                    <li><a href="/#testimonials" class="text-xl">Opinie</a></li>
+                    <li><a href="/blog" class="text-xl">Blog</a></li>
+                    <li><a href="/#contact" class="text-xl">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="md:order-2 lg:order-4">
+                <Button variant="transparent" free="false" class={`md:px-3 px-3`} href="/#calc">
+                    Oblicz oszczędności
+                </Button>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -22,7 +22,7 @@ const {
   linkText = 'Zobacz wszystkie wpisy',
   linkUrl = getBlogPermalink(),
   information = await Astro.slots.render('information'),
-  count = 4,
+  count = 6,
 
   id,
   isDark = false,
@@ -35,27 +35,19 @@ const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count }) : [];
 
 {
   APP_BLOG.isEnabled ? (
-    <WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container as string} bg={bg}>
-      <div class="flex flex-col lg:justify-between lg:flex-row mb-8">
-        {title && (
-          <div class="md:max-w-sm">
-            <h2
-              class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-2"
-              set:html={title}
-            />
-            {APP_BLOG.list.isEnabled && linkText && linkUrl && (
-              <Button variant="link" href={linkUrl}>
-                {' '}
-                {linkText} »
-              </Button>
-            )}
+    <WidgetWrapper id={id} isDark={isDark} bg={bg}>
+      <section class="flex items-center py-20 bg-rs-light-green dark:bg-rs-dark-blue px-4">
+        <div class="max-w-screen-lg mx-auto">
+          <h2 class="font-bold md:text-5xl text-2xl mb-20 text-black dark:text-white text-center">Blog poświęcony zrównoważonemu sprzątaniu i trosce o środowisko</h2>
+          <Grid posts={posts} />
+          <div class="mt-10 flex justify-center">
+            <a href="/blog" class="font-bold text-black text-xl box-border border-black rounded-full py-3 px-7 border-2 block w-max dark:text-white dark:border-white relative" data-astro-source-file="/home/mlipski/projekty/twojekologicznydom/src/components/ui/Button.astro" data-astro-source-loc="29:6">
+              Zobacz więcej postów
+            </a>
           </div>
-        )}
+        </div>
+      </section>
 
-        {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
-      </div>
-
-      <Grid posts={posts} />
     </WidgetWrapper>
   ) : (
     <Fragment />

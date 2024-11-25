@@ -1,0 +1,103 @@
+---
+import Image from '~/components/common/Image.astro';
+
+//TODO connect with real testimonials
+const slides = [
+    {
+        alt: 'Warszawa',
+        stars: 5,
+        desc: 'Używam ściereczek Raypath od ponad roku i jestem zachwycona! Nie tylko świetnie czyszczą wszystkie powierzchnie w moim domu, ale też nie muszę już kupować tyle chemicznych środków czystości. To oszczędność dla portfela i dla środowiska!',
+        name: 'Anna K',
+        role: 'Warszawa',
+        img: '/img/calculator-option-1.png',
+        active: false
+    },
+    {
+        alt: 'Kraków',
+        stars: 5,
+        desc: 'Jako alergik, zawsze miałem problem ze środkami czystości. Odkąd przeszedłem na system Raypath, moje objawy znacznie się zmniejszyły. Plus, dom lśni czystością bez użycia agresywnych detergentów. Polecam!',
+        name: 'Marek W.',
+        role: 'Kraków',
+        img: '/img/calculator-option-1.png',
+        active: false
+    },
+
+    {
+        alt: 'Gdańsk',
+        stars: 5,
+        desc: 'Początkowo byłam sceptyczna co do ceny produktów Raypath, ale po pół roku użytkowania widzę, że to była świetna inwestycja. Ściereczki są tak trwałe i skuteczne, że praktycznie przestałam kupować inne środki czystości. W dłuższej perspektywie to naprawdę się opłaca.',
+        name: 'Karolina S.',
+        role: 'Gdańsk',
+        img: '/img/calculator-option-1.png',
+        active: false
+    },
+    {
+        alt: 'Wrocław',
+        stars: 5,
+        desc: 'Jako właściciel małej firmy sprzątającej, zdecydowałem się zainwestować w produkty Raypath. To była najlepsza decyzja biznesowa, jaką podjąłem! Moi klienci są zachwyceni efektami, a ja oszczędzam na środkach chemicznych. Win-win!',
+        name: 'Tomasz B.',
+        role: 'Wrocław',
+        img: '/img/calculator-option-1.png',
+        active: false
+    },
+    {
+        alt: 'Poznań',
+        stars: 5,
+        desc: 'Raypath to nie tylko czystość, ale też ekologia. Czuję, że robiąc coś tak prostego jak sprzątanie, przyczyniamy się do ochrony środowiska. To wspaniałe uczucie!',
+        name: 'Magdalena O.',
+        role: 'Poznań',
+        img: '/img/calculator-option-1.png',
+        active: false
+    }
+];
+
+---
+
+
+
+<div>
+    <section class="splide" aria-label="Testimonials">
+        <div class="splide__track">
+              <ul class="splide__list">
+                {slides.map((slide) => 
+                (
+                <li class="splide__slide">
+                    <div class="flex items-center">
+                        <div class="bg-rs-light-gray dark:bg-[#0a0f39] w-full h-full rounded-[30px] h-[530px] flex justify-center items-center object-center flex-col gap-8 p-7 max-w-[720px] mx-auto">
+                            {/* <div class="bg-white w-[170px] h-[170px] rounded-xl overflow-hidden">
+                                <Image
+                                    src="/img/calculator-option-1.png"
+                                    class="w-[170px] h-[170px] object-contain"
+                                    alt={slide.alt}
+                                    aspectRatio="16:9"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </div> */}
+                            <div class="flex gap-1">
+                                {Array.from({ length: slide.stars }).map((_, index) => (
+                                    <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.9765 0.927049C11.2759 0.00573826 12.5793 0.00573993 12.8787 0.927051L14.7861 6.79754C14.92 7.20957 15.3039 7.48853 15.7372 7.48853H21.9098C22.8785 7.48853 23.2813 8.72814 22.4975 9.29754L17.5038 12.9257C17.1533 13.1804 17.0067 13.6317 17.1405 14.0437L19.048 19.9142C19.3473 20.8355 18.2928 21.6017 17.5091 21.0323L12.5154 17.4041C12.1649 17.1495 11.6903 17.1495 11.3398 17.4041L6.34608 21.0323C5.56236 21.6017 4.50788 20.8355 4.80724 19.9142L6.71467 14.0437C6.84855 13.6317 6.70189 13.1803 6.3514 12.9257L1.35766 9.29754C0.57395 8.72814 0.976727 7.48853 1.94545 7.48853H8.11805C8.55128 7.48853 8.93523 7.20957 9.06911 6.79754L10.9765 0.927049Z" fill="#00984D"/>
+                                    </svg>
+                                ))}   
+                            </div>
+                            <div>
+                                <p class="text-xl font-regular text-black dark:text-white text-center">“{slide.desc}”</p>
+                            </div>
+                            <div>
+                                <p class="text-base font-bold text-black dark:text-white text-center">{slide.name}</p>
+                                <p class="text-base font-regular text-black dark:text-white text-center">{slide.role}</p>
+                            </div>
+                        </div>
+                    </div>
+                  </li>
+                )
+                )}
+              </ul>
+        </div>
+        
+      </section>
+</div>
+
+
+
